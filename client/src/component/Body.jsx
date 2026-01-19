@@ -1,15 +1,21 @@
 import RestaurantCard from "./Rescard";
+import restaurants from "./data";
 
 const Body = () => {
+  const rests = restaurants;
   return (
     <>
       <div className="p-2">
-        <div className="p-2.5">Search</div>
+        <form className="flex gap-2 justify-center" action="search">
+            <input className="border p-1" placeholder="search food or restaurant" type="text"/>
+            <button className="border p-1 rounded-xl" type="submit" >Search</button>
+        </form>
         <div className="flex flex-wrap gap-4 justify-around">
-          <RestaurantCard  img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXbdIZXEzq_oSQnNVmmN4sNPAPyJFIcTxUnA&s" resName = "Paradise Hotel" cuisine="Asian, Biryani, Hydrabadi" stars="4.5" time = "38 Mins" />
-          <RestaurantCard img="food-logo-2.jpg"  resName = "Prince Hotel" cuisine="Indian, Tahari, Deccan" stars="5.0" time = "21 Mins"/>
-          <RestaurantCard img="" />
-          <RestaurantCard />
+            {
+                rests.map((hotels,index)=>(
+                    <RestaurantCard key={index} resData = {hotels}/>
+                ))
+            }
         </div>
       </div>
     </>
