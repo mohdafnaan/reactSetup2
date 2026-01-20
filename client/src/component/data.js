@@ -1,4 +1,4 @@
-const restaurants = [
+let restaurants = [
     {
         "name": "Raju Gari Biryani",
         "areaName": "Madhapur",
